@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>甜心食譜庫 | 共享你的甜點時光</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.css">
+
+    <!-- Bootstrap + FoodHut main styles -->
+  <link rel="stylesheet" href="assets/css/foodhut.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">關於我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="latest.html">最新食譜</a>
+                </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="recipeDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            所有食譜
+          </a>
+          <div class="dropdown-menu" aria-labelledby="recipeDropdown">
+            <a class="dropdown-item" href="all-recipes.html"><strong>全部食譜</strong></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="bread.html">麵包</a>
+            <a class="dropdown-item" href="cake.html">蛋糕</a>
+            <a class="dropdown-item" href="cookie.html">餅乾</a>
+            <a class="dropdown-item" href="pudding.html">其他</a>
+          </div>
+        </li>
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="reviews.html">食譜心得<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dessert-cafes.html">甜點 / 咖啡廳</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">聯絡我們</a>
+                </li>
+                <li class="nav-item">
+            <form class="form-inline ml-3">
+              <input class="form-control form-control-sm" type="search" placeholder="搜尋食譜" aria-label="Search">
+            </form>
+          </li>
+            </ul>
+        </div>
+    </nav>
+<style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      background-color: #fff7f2;
+      color: #333;
+      padding: 40px;
+    }
+
+    .recipe-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background-color: #fffaf5;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .recipe-image {
+      flex: 1 1 300px;
+      background-image: url('images/salt-croissant.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      min-height: 320px;
+    }
+
+    .recipe-content {
+      flex: 2 1 500px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 32px;
+      color: #bf665e;
+    }
+
+    .favorite-btn {
+      background: #ffe4e1;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .favorite-btn:hover {
+      background: #ffd1d1;
+      transform: scale(1.05);
+    }
+
+    .section {
+      background-color: #fff9f0;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h4 {
+      margin-top: 0;
+      color: #bf665e;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .steps li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .steps li:nth-child(n) {
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+<body>
+  <div class="recipe-container">
+    <div class="recipe-image">
+      <img src="lollipop.jpg" alt="水晶棒棒糖">
+    </div>
+
+    <div class="recipe-content">
+      <h2>水晶棒棒糖</h2>
+      <button class="favorite-btn">❤️ 收藏此食譜</button>
+
+      <div class="section">
+        <h4> 棒棒糖材料（公克）</h4>
+        <ul>
+          <li>愛素糖：180</li>
+          <li>水：18 ( 糖的 10% )</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4> 內餡（公克）</h4>
+        <ul>
+          <li>可食用糯米紙：適量</li>
+          <li>可食用花瓣：適量</li>
+          <li>糖珠：適量</li>
+          <li>色膏：適量</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>【愛素糖介紹】</h4>
+        <ul>
+          <li>又稱為巴糖醇,亦稱異麥芽酮糖醇,國外稱益壽糖。 </li>
+          <li>優點:適合糖尿病高血脂等病人食用;非致齲齒性;以蔗糖為原料,抗吸溼 性高、拉絲性強、甜度和熱量只有蔗糖的50% </li>
+          <li>注意事項:操作上温度不可以超過170度、保存時需要密封包裝</li>
+        </ul>
+      </div>
+
+       <div class="section">
+        <h4>所需器具</h4>
+        <ul>
+          <li>矽膠棒棒糖模型 </li>
+          <li>噴槍</li>
+          <li>耐熱棒子</li>
+          <li>塑膠包裝袋(5*5以上)</li>
+          <li>金束繩</li>
+          <li> 瓦斯爐</li>
+          <li> 微波爐</li>
+          <li> 不沾鍋子</li>
+          <li> 温度計</li>
+          <li> 矽膠墊及矽膠碗</li>
+          <li> 糖果架</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>保存:一個月、密封、乾燥劑、氣泡袋</h4>
+      </div>
+
+      <div class="section">
+        <h4>🔥 烘焙資訊</h4>
+        <ul>
+          <li>烘焙溫度：</li>
+          <li>時間：</li>
+          <li>數量：24</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>📋 製作流程</h4>
+        <ol class="steps">
+          <li style="--i:1">愛素糖小火慢慢熬煮，一邊煮一邊使用溫度計測溫，溶解後煮到約160度熄火。</li>
+          <li>※確實使用溫度計測量，避免煮過頭</li>
+          <li style="--i:2">熄火後先靜置幾分鐘，待大泡泡消除再倒入模型中至一半，放上裝飾的櫻花糖片和金箔</li>
+          <li style="--i:3">待糖稍微凝固後，放上紙棍並倒入剩下的愛素糖至滿模</li>
+          <li style="--i:4">等棒棒糖冷卻後脫模，用小噴槍噴烤表面讓霧面變透亮</li>
+          <li style="--i:5">待表面凝固後即可包裝完成</li>
+          <li style="--i:6">台灣氣候潮濕，當棒棒糖還溫溫的時候就需要盡快裝袋，否則等全涼的時候棒棒糖就會受潮，會黏袋難以包裝！</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn" id="contact">
+    <div class="py-5">
+      <h3 class="mb-4">聯絡我們</h3>
+      <p class="text-muted">有任何建議、合作邀約或投稿需求歡迎來信 ✉</p>
+      <div class="row justify-content-center text-center">
+        <div class="col-sm-4">
+          <h5 class="text-white">EMAIL</h5>
+          <p class="text-muted">hello@dessertlab.com</p>
+        </div>
+        <div class="col-sm-4">
+          <h5 class="text-white">IG / FB</h5>
+          <p class="text-muted">@sweetrecipehub</p>
+        </div>
+        <div class="col-sm-4">
+          <h5 class="text-white">分享甜點</h5>
+          <p class="text-muted">#甜心食譜庫</p>
+        </div>
+      </div>
+    </div>
+    <p class="mb-0 py-3 text-muted small">&copy; <script>document.write(new Date().getFullYear())</script> 甜心食譜庫｜由你我共同烘焙的甜蜜時光</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+  <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+  <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+  <script src="assets/vendors/wow/wow.js"></script>
+  <script src="assets/js/foodhut.js"></script>
+</body>
+</html>

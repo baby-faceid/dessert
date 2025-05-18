@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>甜心食譜庫 | 共享你的甜點時光</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.css">
+
+    <!-- Bootstrap + FoodHut main styles -->
+  <link rel="stylesheet" href="assets/css/foodhut.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#about">關於我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="latest.html">最新食譜</a>
+                </li>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="recipeDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            所有食譜
+          </a>
+          <div class="dropdown-menu" aria-labelledby="recipeDropdown">
+            <a class="dropdown-item" href="all-recipes.html"><strong>全部食譜</strong></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="bread.html">麵包</a>
+            <a class="dropdown-item" href="cake.html">蛋糕</a>
+            <a class="dropdown-item" href="cookie.html">餅乾</a>
+            <a class="dropdown-item" href="pudding.html">其他</a>
+          </div>
+        </li>
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="reviews.html">食譜心得<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dessert-cafes.html">甜點 / 咖啡廳</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">聯絡我們</a>
+                </li>
+                <li class="nav-item">
+            <form class="form-inline ml-3">
+              <input class="form-control form-control-sm" type="search" placeholder="搜尋食譜" aria-label="Search">
+            </form>
+          </li>
+            </ul>
+        </div>
+    </nav>
+<style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+      background-color: #fff7f2;
+      color: #333;
+      padding: 40px;
+    }
+
+    .recipe-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background-color: #fffaf5;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .recipe-image {
+      flex: 1 1 300px;
+      background-image: url('images/salt-croissant.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      min-height: 320px;
+    }
+
+    .recipe-content {
+      flex: 2 1 500px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 32px;
+      color: #bf665e;
+    }
+
+    .favorite-btn {
+      background: #ffe4e1;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      margin-bottom: 20px;
+    }
+
+    .favorite-btn:hover {
+      background: #ffd1d1;
+      transform: scale(1.05);
+    }
+
+    .section {
+      background-color: #fff9f0;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h4 {
+      margin-top: 0;
+      color: #bf665e;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .steps li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .steps li:nth-child(n) {
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+
+<body>
+  <div class="recipe-container">
+    <div class="recipe-image">
+      <img src="salt-croissant.jpg" alt="鹽可頌">
+    </div>
+
+    <div class="recipe-content">
+      <h2>鹽可頌</h2>
+      <button class="favorite-btn">❤️ 收藏此食譜</button>
+
+      <div class="section">
+        <h4>🍞 麵團材料（公克）</h4>
+        <ul>
+          <li>高筋麵粉：700</li>
+          <li>低筋麵粉：300</li>
+          <li>奶粉：30</li>
+          <li>砂糖：36</li>
+          <li>鹽：15</li>
+          <li>冰水：630–660（口感稍硬 630 – 口感軟 660）</li>
+          <li>低糖酵母：10</li>
+          <li>奶油：20</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>🧈 內餡（公克）</h4>
+        <ul>
+          <li>有鹽奶油（或無鹽奶油＋鹽）：120（切 40 份冷凍備用）</li>
+          <li>玫瑰鹽 / 海鹽 / 鹽之花：少許（烤前裝飾）</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>🔥 烘焙資訊</h4>
+        <ul>
+          <li>烘焙溫度：210 / 200</li>
+          <li>時間：約 25 分鐘</li>
+          <li>數量：40g × 40</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>📋 製作流程</h4>
+        <ol class="steps">
+          <li style="--i:1">將糖鹽水放入攪拌缸 → 加入粉類 → 酵母 → 開始揉麵</li>
+          <li style="--i:2">低速 2 分鐘 → 中速 8 分鐘拉筋</li>
+          <li style="--i:3">加入奶油低速 2 分鐘 → 中速 8 分鐘完全吸收</li>
+          <li style="--i:4">奶油分割成 40g 冷凍 → 麵團分割滾圓</li>
+          <li style="--i:5">基本發酵 20 分鐘（或 1 小時）</li>
+          <li style="--i:6">分割成每顆 40g → 再次滾圓 → 中間發酵 10 分鐘</li>
+          <li style="--i:7">整形：搓成水滴狀 → 桿開 → 捲入奶油 → 排盤</li>
+          <li style="--i:8">最後發酵 10 分鐘</li>
+          <li style="--i:9">表面噴水＋撒鹽 → 烘烤 10 分鐘後翻盤再烤 15 分鐘</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer / 聯絡資訊 -->
+  <footer id="contact" class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+<footer class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+  <div class="py-5">
+    <h3 class="mb-4">聯絡我們</h3>
+    <p class="text-muted">有任何建議、合作邀約或投稿需求歡迎來信 ✉</p>
+
+    <div class="row justify-content-center text-center">
+      <div class="col-sm-4">
+        <h5 class="text-white">EMAIL</h5>
+        <p class="text-muted">hello@dessertlab.com</p>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="text-white">IG / FB</h5>
+        <p class="text-muted">@sweetrecipehub</p>
+      </div>
+      <div class="col-sm-4">
+        <h5 class="text-white">分享甜點</h5>
+        <p class="text-muted">#甜心食譜庫</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mb-0 py-3 text-muted small">&copy; <script>document.write(new Date().getFullYear())</script> 甜心食譜庫｜由你我共同烘焙的甜蜜時光</p>
+</footer>
+    <!-- end of page footer -->
+
+  <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- wow.js -->
+    <script src="assets/vendors/wow/wow.js"></script>
+    
+
+    <!-- FoodHut js -->
+    <script src="assets/js/foodhut.js"></script>
+
+</body>
+</html>
+
+
+
